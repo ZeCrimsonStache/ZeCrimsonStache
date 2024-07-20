@@ -1,13 +1,7 @@
-<body id="body">
+<body style="font-family: 'Comfortaa', sans-serif; font-optical-sizing: auto; font-style: normal; align: center;">
+    
+<h1>Hi!</h1>
+<h2>I don't do much on here but I am learning JavaScript!</h2>
+<img src="https://pomf2.lain.la/f/71e0gzgq.jpg">
 
-    <input id="input">
-    <button id="button">Submit</button>
-   
-    <script>document.getElementById('button').onclick = function(){
-    let submit = document.getElementById('input').value;
-    let paragraph = document.createElement('p');
-    paragraph.textContent = `I created this element. Also you wrote ${submit} in the textbox.`;
-    const body = document.getElementById('body');
-    body.appendChild(paragraph);
-}</script>
 </body>
