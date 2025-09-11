@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>My Drive - Google Drive</title>
+	<link id="faviconID" rel="icon" href="https://drive.google.com/favicon.ico" />
+	<style>
+		html {
+			overflow: auto;
+			background-color: #f3f3f3;
+		}
+
+		html,
+		body,
+		div,
+		iframe {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			border: none;
+			background-color: #E6F0F7;
+		}
+
+		iframe {
+			display: block;
+			width: 100%;
+			border: none;
+			overflow-y: clip;
+			overflow-x: hidden;
+		}
+
+		button {
+			margin: 5px;
+			height: 50px;
+			border-radius: 10px;
+		}
+
+        button:hover {
+			background-color: #f0f8ff;
+			cursor: pointer;
+		}
+
+		button:not(:hover) {
+			background-color: white;
+		}
+
+		.input {
+			width: 125px;
+			border-radius: 10px;
+			height: 44px;
+			font-size: 15px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		#customJsInput {
+			width: 401px;
+		}
+
+		.inputBtn {
+			margin-right: 0px;
+			vertical-align: middle;
+		}
+
+		#openUrlMethod {
+			width: fit-content;
+			text-align: center;
+		}
+
+		#openUrlMethodForm {
+			background-color: #003366;
+			color: #E5E5E5;
+			margin: 10px;
+			border: solid gray 2px;
+			border-right: black 2px solid;
+			border-bottom: black 2px solid;
+			width: fit-content;
+			height: fit-content;
+			border-radius: 12px 12px 12px 12px;
+		}
+
+		select {
+			margin-left: none;
+			padding: 10px;
+			background-color: white;
+			border: solid gray 1px;
+			background-color: #f0f0f0;
+			border-right: black 1px solid;
+			border-bottom: black 1px solid;
+		}
+
+		label {
+			margin-right: none;
+			padding-bottom: 13px;
+			border-radius: 10px;
+		}
+
+		hr {
+			width: 500px;
+			height: 3px;
+			border: gray 1px solid;
+			border-right: black 1px solid;
+			border-bottom: black 1px solid;
+			background-color: #003366;
+			margin: 10px;
+			border-radius: 10px;
+		}
+
+		p {
+			margin-left: 10px;
+			padding: 10px;
+			background-color: white;
+			border: solid gray 1px;
+			background-color: #f0f0f0;
+			border-right: black 1px solid;
+			border-bottom: black 1px solid;
+			width: fit-content;
+			border-radius: 10px;
+		}
+
+		.toggleBtn {
+			display: inline-block;
+			text-align: center;
+			height: 20px;
+			width: 20px;
+			border-width: 1px;
+			font-size: 15px;
+		}
+
+		.toggleBtn:not(:hover) {
+			background-color: #E6F0F7;
+		}
+
+		.toggleBtn:hover {
+			background-color: #E6F0F7;
+		}
+
+		h3 {
+			display: inline-block;
+			margin: 0px;
+		}
+
+		#games, #misc, #utility {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<p>Hover over the buttons to see more information.
+		<button style="margin: 0;" onclick="openUrl('index.html')" title="Reopens this page. This page allows access to various tools and the ability to bypass school filters">Reopen this Page</button>
+	</p>
+	<section id="optionSites" title="If embedded, it's at the bottom of the page">
+		<form id="openUrlMethodForm">
+			<label for="openUrlMethod">How to open the sites below?</label>
+			<select id="openUrlMethod" class="input">
+                <option value="newTab" selected>Open in an about:blank tab</option>
+                <option value="embed">Embed on this page</option>
+            </select>
+		</form>
+		  <br>
+		<h3>Favorites</h3> <button class="toggleBtn" id="toggleBtnFavorites" onclick="toggleSection('favorites')">-</button>
+
+		<section id="favorites">
+			<button onclick="openUrl('https://nebulilabs.github.io/NebuliOS/main.html');" title="Embedder, games, shows, and more">NebuliOS</button>
+			<button onclick="openUrl('https://fix.macgyver.cf/');" title="Proxy">Rammerhead</button>
+			<button onclick="openUrl('https://nettleweb.com/');" title="Proxy">Nettleweb</button>
+			
+			<br>
+			<button onclick="openUrl('https://e.widgetbot.io/channels/864930713459621978/1082860787204358214');" title="Open Widgetbot chat, allowing you to access the Discord chat through a alternate client communicating with a bot in the actual server">Chat</button>
+			<button onclick="openUrl('https://htmledit.squarefree.com/');" title="Real-time basic HTML editor">HTML</button>
+			<button onclick="openUrl('https://www.editpad.org/');" title="Simple text editor with the ability to format, download, and upload files.">Editpad</button>
+			<button onclick="openUrl('https://pomf.lain.la/');" title="File sharer">Pomf</button>
+		</section>
+
+		<hr>
+		<h3>Games</h3> <button class="toggleBtn" id="toggleBtnGames" onclick="toggleSection('games')">+</button>
+
+		<section id="games">
+			<button onclick="openUrl('MC.html');" title="This is a port of Minecraft to the browser called Eaglercraft">Eagler 1.5.2</button>
+			<button onclick="openUrl('https://mc.hgci.org/?wisp=wss://wisp.run/');" title="This is a port of Minecraft to the browser called Eaglercraft">Eagle 1.8.8</button>
+			<button onclick="openUrl('https://suroi.io');" title="Surviv.io Remake, top down shooter">Suroi</button>
+			<button onclick="openUrl('https://sin.browserfps.com/');" title="Krunker.io, a pixelated multiplayer first-person shooter">Krunker</button>
+			<button onclick="openUrl('https://philome.la/johnayliff/seedship/play/index.html');" title="A choose-your-own-adventure randomly-generated text-based survival game in space">Seedship</button>
+			<button onclick="openUrl('https://arras.io/');" title="A mutliplayer .io game, similar to Diep, with many gamemodes">Arras</button>
+		</section>
+
+		<hr>
+		<h3>Misc.</h3> <button class="toggleBtn" id="toggleBtnMisc" onclick="toggleSection('misc')">+</button>
+
+		<section id="misc">
+			<button onclick="openUrl('https://quizlet.gq/');" title="Proxy">Rammerhead</button>
+			<button onclick="openUrl('https://0xdc.icu')" title="Freedom has a large list of proxies + a few other things">Freedom List</button>
+			<button onclick="openUrl('https://craftedgamz.com/main.html');" title="Mix">Crafted</button>
+			<button onclick="openUrl('https://the-acornz.github.io/');" title="Password is 'Acorn!'">Acornz</button>
+			<br>
+			<button onclick="openUrl('https://gratis.ro/');" title="Includes games, apps, and AI.">Definitely Science</button>
+			<button onclick="openUrl('https://american-sign-language.vercel.app/');" title="Includes games, apps, and AI.">Moonlight</button>
+			<button onclick="openUrl('https://boredomarcade.xyz/');" title="Proxy, games, and more">Boredom</button>
+			<button onclick="openUrl('https://tide-tau.vercel.app/');" title="Proxy">Tide</button>
+			<br>
+			<button onclick="openUrl('https://vapor.ubyis.org/');" title="Tools, games, VM, and more">Vapor Tools</button>
+			<button onclick="openUrl('https://vapor.ubyis.org/scram');" title="Proxy">Vapor VM</button>
+			<button onclick="openUrl('https://evadion.org/');" title="Password is 'Evadion!'">Evadio</button>
+		</section>
+
+			<hr>
+    <h3>Utility</h3> <button class="toggleBtn" id="toggleBtnUtility" onclick="toggleSection('utility')">+</button>
+
+	<section id="utility">
+		<button onclick="openUrl('https://html-css-js.com/');" title="HTML, JavaSCript, and CSS editor.">HTML/JS</button>
+		<button onclick="openUrl('https://www.fontspace.com/');" title="Analyze unicode characters for fun">Fontspace</button>
+		<button onclick="openUrl('https://tempmail.so/');" title="Disposable email addresses">Tempmail</button>
+		<button onclick="openUrl('https://tane.us/ac/nl.html');" title="Animal Crossing daily music (good ambient study music)">Tane</button>
+	</section>
+
+	<hr>
+
+	<section id="customSites">
+		<button class="inputBtn" onclick="embedCustomUrl();" title="Embeds the URL below (only works for some websites, they must allow it)">Embed Custom URL</button>
+		<button class="inputBtn" onclick="openCustomUrl();" style="margin-left: 0px;" title="Opens the URL in an about:blank tab (only works for some websites, they must allow it)">Open custom about:blank URL</button>
+		<input type="text" placeholder="Custom URL" id="customUrl" class="input">
+    </section>
+
+		<hr>
+
+		<section id="customJs">
+			<button class="inputBtn" onclick="evalCustomJs();" title="Run custom JavaScript on this tab! Try 'alert()' or anything else!">Run JS</button>
+			<textarea placeholder="Enter JavaScript (is expandable from bottom right corner)" id="customJsInput" class="input"></textarea>
+		</section>
+
+		<hr>
+
+		<iframe src="" id="frameId" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%"
+			scrolling="auto"></iframe>
+	<script src="eruda.js"></script>
+		<script type="text/javascript">
+			eruda.init();
+			function openUrl(source){
+            if (document.getElementById('openUrlMethod').value == 'embed'){
+                document.getElementById('frameId').src = source;
+            } else if (document.getElementById('openUrlMethod').value == 'newTab'){
+                let win = window.open();
+                let iframe = win.document.createElement('iframe');
+                win.document.body.style.margin = '0';
+                win.document.body.style.height = '100vh';
+                iframe.style.border = 'none';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.margin = '0';
+                iframe.src = source;
+                win.document.body.appendChild(iframe);
+            }
+        }
+
+		function toggleSection(sectionId) {
+			let section = document.getElementById(sectionId);
+			let btn = document.getElementById('toggleBtn' + sectionId.charAt(0).toUpperCase() + sectionId.slice(1))
+			if (section.style.display == "none" || section.style.display == '') {
+						section.style.display = "block";
+						btn.textContent = "-";
+					} else if (section.style.display == "block") {
+						section.style.display = "none";
+						btn.textContent = "+";
+					}
+			}
+
+        function embedCustomUrl() {
+            document.getElementById('frameId').src = document.getElementById('customUrl').value;
+        }
+
+        function evalCustomJs() {
+            eval(document.getElementById('customJsInput').value);
+        }
+
+        function openCustomUrl() {
+            let win = window.open();
+            let iframe = win.document.createElement('iframe');
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = document.getElementById('customUrl').value;
+            win.document.body.appendChild(iframe);
+        }
+		</script>
+</body>
+
+</html>
